@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Belajar Threejs</title>
+	<style>
+        body {
+            margin: 0; /* Hilangkan margin default */
+            overflow: hidden; /* Cegah scrollbar */
+        }
+        .kubus {
+            width: 100vw;
+            height: 100vh;
+            background-color: indianred; /* Pindahkan latar belakang ke .kubus */
+        }
+    </style>
+</head>
+<body>
+	<div class="kubus"></div>
+
+	<script type="importmap">
+	{
+	  "imports": {
+	    "three": "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js",
+	    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/"
+	  }
+	}
+	</script>
+	<script src="script.js" type="module"></script>
+</body>
+</html>
