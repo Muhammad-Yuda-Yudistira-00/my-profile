@@ -10,7 +10,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight - 20);
 kubus.appendChild(renderer.domElement);
 
 // Fungsi untuk membuat tekstur dengan tulisan
@@ -43,14 +43,16 @@ const imageTexture = textureLoader.load(
 
 // Buat material untuk setiap sisi
 const materials = [
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Yudistira', 'indianred', '#000000') }), // 1 Sisi kanan
+    new THREE.MeshLambertMaterial({ map: createTextTexture('Yudistira', 'orangered', '#000000') }), // 1 Sisi kanan
     new THREE.MeshLambertMaterial({ map: imageTexture }), // 2 Sisi kiri
-    new THREE.MeshLambertMaterial({ map: createTextTexture('X', '#ff0000', '#ffffff') }), // 3 Sisi atas
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Facebook', '#ff0000', '#ffffff') }), // 4 Sisi bawah
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Instagram', '#ff0000', '#ffffff') }), // 5 Sisi depan
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Threads', '#ff0000', '#ffffff') })  // 6 Sisi belakang
+    new THREE.MeshLambertMaterial({ map: createTextTexture('X', 'orangered', 'black') }), // 3 Sisi atas
+    new THREE.MeshLambertMaterial({ map: createTextTexture('Facebook', 'black', '#0366ff') }), // 4 Sisi bawah
+    new THREE.MeshLambertMaterial({ map: createTextTexture('Instagram', 'black', '#ffffff') }), // 5 Sisi depan
+    new THREE.MeshLambertMaterial({ map: createTextTexture('Threads', 'black', '#ffffff') })  // 6 Sisi belakang
 ];
 
+materials[0].userData = {link: 'https://www.linkedin.com/in/muhammad-yudistira-24a071258/'}
+materials[1].userData = {link: 'https://github.com/Muhammad-Yuda-Yudistira-00'}
 materials[2].userData = {link: 'https://x.com/Yudistira00dist'}
 materials[3].userData = {link: 'https://www.facebook.com/profile.php?id=100088238884189'}
 materials[4].userData = {link: 'https://www.instagram.com/yudistira00yd/'}
