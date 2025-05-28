@@ -41,9 +41,16 @@ const imageTexture = textureLoader.load(
     (error) => console.error('Gagal memuat gambar:', error)
 );
 
+const imageProfile = textureLoader.load(
+    'profile_2.jpg',
+    () => console.log('Profile pict dimuat'),
+    undefined,
+    (error) => console.error('Gagal memuat profile pict:', error)
+)
+
 // Buat material untuk setiap sisi
 const materials = [
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Yudistira', 'orangered', '#000000') }), // 1 Sisi kanan
+    new THREE.MeshLambertMaterial({ map: imageProfile }), // 1 Sisi kanan
     new THREE.MeshLambertMaterial({ map: imageTexture }), // 2 Sisi kiri
     new THREE.MeshLambertMaterial({ map: createTextTexture('X', 'orangered', 'black') }), // 3 Sisi atas
     new THREE.MeshLambertMaterial({ map: createTextTexture('Facebook', 'black', '#0366ff') }), // 4 Sisi bawah
