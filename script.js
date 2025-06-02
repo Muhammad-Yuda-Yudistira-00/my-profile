@@ -42,7 +42,7 @@ const imageTexture = textureLoader.load(
 );
 
 const imageProfile = textureLoader.load(
-    'profile_2.jpg',
+    'doctor-n-gin.jpeg',
     () => console.log('Profile pict dimuat'),
     undefined,
     (error) => console.error('Gagal memuat profile pict:', error)
@@ -50,12 +50,12 @@ const imageProfile = textureLoader.load(
 
 // Buat material untuk setiap sisi
 const materials = [
-    new THREE.MeshLambertMaterial({ map: imageProfile }), // 1 Sisi kanan
-    new THREE.MeshLambertMaterial({ map: imageTexture }), // 2 Sisi kiri
-    new THREE.MeshLambertMaterial({ map: createTextTexture('X', 'orangered', 'black') }), // 3 Sisi atas
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Facebook', 'black', '#0366ff') }), // 4 Sisi bawah
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Instagram', 'black', '#ffffff') }), // 5 Sisi depan
-    new THREE.MeshLambertMaterial({ map: createTextTexture('Threads', 'black', '#ffffff') })  // 6 Sisi belakang
+    new THREE.MeshLambertMaterial({ map: createTextTexture('Instagram', 'black', '#ffffff') }), // 1 Sisi kanan
+    new THREE.MeshLambertMaterial({ map: createTextTexture('X', 'red', 'black') }), // 2 Sisi kiri
+    new THREE.MeshLambertMaterial({ map: createTextTexture('Threads', 'black', 'yellow') }), // 3 Sisi atas
+    new THREE.MeshLambertMaterial({ map: createTextTexture('Facebook', 'black', '#fff') }), // 4 Sisi bawah
+    new THREE.MeshLambertMaterial({ map: imageProfile }), // 5 Sisi depan
+    new THREE.MeshLambertMaterial({ map: imageTexture })  // 6 Sisi belakang
 ];
 
 materials[0].userData = {link: 'https://www.linkedin.com/in/muhammad-yudistira-24a071258/'}
@@ -71,7 +71,7 @@ const cube = new THREE.Mesh(geometry, materials);
 scene.add(cube);
 
 // Pencahayaan
-const ambientLight = new THREE.AmbientLight(0x404040, 2);
+const ambientLight = new THREE.AmbientLight(0x404040, 8);
 scene.add(ambientLight);
 
 const pointLight = new THREE.PointLight(0xffffff, 2, 100);
