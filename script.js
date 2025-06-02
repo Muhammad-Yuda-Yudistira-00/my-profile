@@ -58,12 +58,12 @@ const materials = [
     new THREE.MeshLambertMaterial({ map: imageTexture })  // 6 Sisi belakang
 ];
 
-materials[0].userData = {link: 'https://www.linkedin.com/in/muhammad-yudistira-24a071258/'}
-materials[1].userData = {link: 'https://github.com/Muhammad-Yuda-Yudistira-00'}
-materials[2].userData = {link: 'https://x.com/Yudistira00dist'}
+materials[4].userData = {link: 'https://www.linkedin.com/in/muhammad-yudistira-24a071258/'}
+materials[5].userData = {link: 'https://github.com/Muhammad-Yuda-Yudistira-00'}
+materials[1].userData = {link: 'https://x.com/Yudistira00dist'}
 materials[3].userData = {link: 'https://www.facebook.com/profile.php?id=100088238884189'}
-materials[4].userData = {link: 'https://www.instagram.com/yudistira00yd/'}
-materials[5].userData = {link: 'https://www.threads.com/@yudistira00yd'}
+materials[0].userData = {link: 'https://www.instagram.com/yudistira00yd/'}
+materials[2].userData = {link: 'https://www.threads.com/@yudistira00yd'}
 
 // Buat geometri dan kubus
 const geometry = new THREE.BoxGeometry(1, 1, 1);
